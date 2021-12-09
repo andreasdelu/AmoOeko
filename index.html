@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Andreas Deleuran Holm Nielsen"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
     <title>NYHED! Amo Øko Hvedemel</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/sue3pbl.css">
+    <link rel="shortcut icon" href="images/logo lille.png" type="image/x-icon">
+    
 </head>
 <body>
     <header>
-        <nav>
-            <img id="mobilLogo" src="images/logo lille.png" alt="Amo Øko Logo">
+        <a id="mobilLogo" href="index.html"><img src="images/Logo.svg" alt="Amo Øko Logo"></a>
+        <nav id="burgerMenu">
             <img id="burgerIcon" src="images/menuikon.svg" alt="Menu ikon">
+            <div id="menu">
+                <a class="menupunkt" href="#">Amo Øko Hvedemel</a>
+                <a class="menupunkt" href="#vind">Vind en KitchenAid</a>
+                <a class="menupunkt" href="#deltager">Sådan deltager du</a>
+                <a class="menupunkt" href="#klimaSection">Vores klimamission</a>
+                <a class="menupunkt" href="#links">Kontakt</a>
+                <a id="tilForside" href="https://www.amo.dk/">
+                    <img src="images/arrowleft.svg" alt="pil til venstre">
+                    Til forsiden
+                </a>
+            </div>
         </nav>
     </header>
     <main>
         <section id="heroSection">
             <img id="hero" src="images/heromobil.png" alt="amo øko hvedemel">
-            <h1>Vores klassiske hvedemel er økologisk!</h1>
+            <h1>Amo hvedemel er <span>økologisk!</span></h1>
             <p id="heroText">
                 Vi har indgået et samarbejde med en gruppe danske økologiske landmænd, 
                 for at kunne sikre at vores hvedemel ikke bidrager til udledningen af 
@@ -29,9 +46,9 @@
         </section>
         <hr class="divider">
         <section id="compSection">
-            <h2>Vind en KitchenAid</h2>
+            <h2 id="vind">Vind en KitchenAid</h2>
             <img id="kitchenAid" src="images/aids.png" alt="KitchenAid billede">
-            <h3>Sådan deltager du:</h3>
+            <h3 id="deltager">Sådan deltager du:</h3>
             <div class="compContainer">
                 <h4>1</h4>
                 <img src="images/Billede1.png" alt="konkurrence billede 1">
@@ -45,8 +62,8 @@
                 <h4>1</h4>
                 <img src="images/Billede2.png" alt="konkurrence billede 2">
                 <p>
-                    Løft mærket på din Amo Øko Hvedemel for at finde 
-                    koden du skal bruge til konkurrencen.
+                    Gå ind på www.amo.dk/konkurrence eller 
+                    tryk på "Deltag" knappen længere nede.
                 </p>
                 <hr>
             </div>
@@ -54,8 +71,8 @@
                 <h4>1</h4>
                 <img src="images/Billede3.png" alt="konkurrence billede 3">
                 <p>
-                    Løft mærket på din Amo Øko Hvedemel for at finde 
-                    koden du skal bruge til konkurrencen.
+                    Tast din kode ind i tekstfeltet på siden og find 
+                    straks ud af om du er den heldige vinder af en spritny KitchenAid!
                 </p>
                 <hr>
             </div>
@@ -89,8 +106,8 @@
             <img class="kornMobil" src="images/korn.png" alt="hvedestrå ikon">
         </section>
         <section id="links">
-            <a href="#">Om Amo</a>
-            <a href="#">Vores andre produkter</a>
+            <a href="https://www.amo.dk/om-amo/">Om Amo</a>
+            <a href="https://www.amo.dk/produkter/">Vores andre produkter</a>
         </section>
     </main>
     <footer>
@@ -113,11 +130,11 @@
             </div>
         </div>
         <div id="linkContainer">
-            <a href="#">Databeskyttelsespolitik</a>
-            <a href="#">Anvendelse af cookies</a>
-            <a href="#">Manage Cookies</a>
+            <a href="https://www.amo.dk/lantmannens-databeskyttelsespolitik/">Databeskyttelsespolitik</a>
+            <a href="https://www.amo.dk/cookie-policy/">Anvendelse af cookies</a>
+            <p>Manage Cookies</p>
         </div>
-        <img src="images/elitebanner.gif" alt="elite smiley banner">
+        <a id="smiley" href="https://www.findsmiley.dk/73158"><img src="images/elitebanner.gif" alt="elite smiley banner"></a>
     </footer>
     
 </body>
