@@ -1,0 +1,236 @@
+:root{
+    /* Farver */
+    --green: #40a83d;
+    --red: #e20019;
+    --white: #fefcf0;
+
+    /* Fonts */
+    --apertura: "apertura",sans-serif;
+    --mencken: "mencken-std",sans-serif;
+
+    /* Variables */
+    --margin: 20px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100vw;
+    height: auto;
+    font-size: 16px;
+    background-color: var(--white);
+    font-family: var(--apertura);
+    scroll-padding-top: 70px;
+    scroll-behavior: smooth;
+}
+header{
+    height: 70px;
+    width: 100vw;
+    background-color: var(--green);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 20px -15px black;
+    z-index: 99999;
+    display: flex;
+}
+#mobilLogo{
+    display: block;
+}
+
+#mobilLogo img{
+    height: 100%;
+    padding: 0px var(--margin) 10px var(--margin);
+}
+
+main{
+    width: 100vw;
+}
+
+#deltagSection, #tak{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100vw;
+    max-width: 650px;
+    height: 100%;
+    min-height: 80vh;
+    background-color: #def3d3;
+    padding: var(--margin) 0;
+    border-right: 2px dashed rgba(65, 168, 61, 0.3);
+    border-left: 2px dashed rgba(65, 168, 61, 0.3);
+}
+#deltagSection h1{
+    font-family: var(--apertura);
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+}
+#deltagSection img{
+    width: 70%;
+    max-width: 360px;
+    margin: 50px 0;
+    position: relative;
+    
+}
+#deltagSection h2{
+    font-family: var(--apertura);
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+#codeInput{
+    border-radius: 2000px;
+    border: none;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 13ch;
+    height: 2.4rem;
+    margin: 30px 0;
+    font-family: var(--apertura);
+}
+
+#deltag{
+    outline: 2px solid var(--white);
+    font-size: 1.2rem;
+}
+
+#deltagContainer{
+    background-color: var(--green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--margin);
+    border-radius: 20px;
+    max-width: 400px;
+}
+
+#tak{
+    display: none;
+}
+
+#tak h1, #tak h2{
+    color: black;
+    font-family: var(--apertura);
+    font-weight: bold;
+    margin: 10px var(--margin);
+}
+#tak h2{
+    font-size: 1.1rem;
+}
+#tak h1{
+    font-size: 2.5rem;
+}
+
+#retry{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--white);
+    background-color: var(--green);
+    padding: 10px 20px;
+    border-radius: 2000px;
+    margin: 20px 0;
+}
+#retry:hover{
+    background-color: var(--white);
+    outline: 2px solid var(--green);
+    color: var(--green);
+}
+
+
+@media screen and (min-width: 500px) {
+    body{
+        --margin: 40px;
+    }
+    #deltagSection h1{
+        font-size: 3rem;
+    }
+    #deltagSection h2{
+        font-size: 2rem;
+    }
+    #deltagContainer{
+        width: 60%;
+    }
+    #tak h1, #tak h2{
+        margin: 10px var(--margin);
+    }
+
+    
+}
+
+@media screen and (min-width: 630px) {
+    #deltag{
+        margin: 0;
+    }
+    #tak h2{
+        font-size: 1.5rem;
+    }
+    #tak h1{
+        font-size: 3rem;
+    }
+
+}
+@media screen and (min-width: 1075px){
+    body{
+        display: block;
+        --margin: 50px;
+    }
+    footer{
+        font-size: 1rem;
+    }
+    #footerContainer{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: none;
+    }
+    
+    
+    #kontakt, #adresse{
+        margin: var(--margin);
+    }
+    #kontakt{
+        max-width: 30ch;
+    }
+    #adresse{
+        text-align: right;
+    }
+    
+    
+    #kontakt :first-child{
+        margin-bottom: 40px;
+    }
+    
+    #kontakt :last-child{
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    
+    #linkContainer{
+        width: 100%;
+        max-width: 900px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 var(--margin);;
+        margin-top: 10px;
+    }
+    
+    #linkContainer a, #linkContainer p{
+        color: var(--white);
+        margin: 15px 0px;
+        text-decoration: underline;
+    }
+    #smiley{
+        display: block;
+        margin: 20px 0 20px 0;
+    }
+    #smiley img{
+        width: 150px;
+    }
+}
+    

@@ -41,14 +41,16 @@ header{
     z-index: 99999;
     display: flex;
 }
+#desktopMenu{
+    display: none;
+}
 
 #burgerMenu{
     height: 100%;
-    width: 70px;
+    width: 80px;
     position: relative;
     margin-left: auto;
     top: 0px;
-    
 }
 
 #menu{
@@ -67,6 +69,10 @@ header{
     padding: 0px 0;
 }
 
+#burgerMenu:hover{
+    width: 100%;
+}
+
 #burgerMenu:hover #menu{
     display: flex;
     animation: menuAnim 0.15s ease forwards;
@@ -80,18 +86,19 @@ header{
 .menupunkt{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     text-decoration: none;
     color: var(--white);
     font-size: 1.5rem;
     width: 100%;
     height: 100%;
+    padding-left: var(--margin);
 }
 .menupunkt:hover{
     background-color: var(--white);
     color: var(--green);
+    font-weight: bold;
 }
-
 #tilForside{
     display: flex;
     align-items: center;
@@ -100,12 +107,26 @@ header{
     font-size: 1.2rem;
     margin: 20px 0;
     margin-right: auto;
+    padding: 10px 0;
+    padding-right: var(--margin);
 }
-#tilForside img{
+#arrow2{
+    display: none;
+}
+#tilForside:hover{
+    background-color: var(--white);
+    color: var(--green);
+}
+#tilForside:hover #arrow1{
+    display: none;
+}
+#tilForside:hover #arrow2{
+    display: block;
+}
+.arrow{
     margin: 0 10px 0 var(--margin);
     height: 1.3rem;
 }
-
 #mobilLogo{
     display: block;
 }
@@ -132,20 +153,26 @@ main{
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     background-color: var(--white);
+    position: relative;
 }
 
 #hero{
     width: 100%;
+    max-width: 400px;
     padding: var(--margin);
     box-sizing: border-box;
 }
+#heroDesktop{
+    display: none;
+}
 #heroSection h1{
-    margin-left: var(--margin);
-    margin-right: auto;
-    margin-bottom: 0.5rem;
+    margin: 0 auto 0.5rem var(--margin);
     font-size: 1.2rem;
     font-weight: bold;
+    max-width: 400px;
 }
 #heroSection h1 span{
     color: var(--red);
@@ -155,9 +182,24 @@ main{
     margin: 0 var(--margin);
     display: block;
     font-size: 1rem;
+    max-width: 400px;
 }
-#heroText span{
-    font-weight: bold;
+#scrollDown{
+    width: 40px;
+    position: absolute;
+    bottom: var(--margin);
+    right: var(--margin);
+}
+
+#scrollDown img{
+    width: 100%;
+    animation: updown 1.5s ease infinite;
+}
+
+@keyframes updown {
+    from{transform: translateY(0);}
+    50%{transform: translateY(10px);}
+    to{transform: translateY(0);}
 }
 
 .kornMobil{
@@ -169,6 +211,7 @@ main{
     display: block;
     width: 100%;
     margin: 0px;
+    border: none;
     border-top: 2px dashed rgba(65, 168, 61, 0.3);
 }
 
@@ -182,6 +225,7 @@ main{
 
 #kitchenAid{
     width: 100%;
+    max-width: 400px;
     padding: 0px var(--margin);
 }
 
@@ -202,6 +246,7 @@ main{
 .compContainer{
     display: flex;
     flex-direction: column;
+    max-width: 400px;
 }
 .compContainer img{
     width: 100%;
@@ -212,12 +257,14 @@ main{
 }
 
 .compContainer p{
-    margin: 20px 20px 0 20px;
+    margin: 40px 20px 0 20px;
 }
 
 #compSection hr{
-    width: calc(100% - 40px);
+    width: 100%;
+    max-width: 360px;
     margin: 40px auto;
+    border: none;
     border-top: 2px dashed rgba(65, 168, 61, 0.3);
 }
 
@@ -232,12 +279,19 @@ main{
     font-size: 1.5rem;
     font-weight: bold;
 }
+#deltag:hover{
+    background-color: var(--white);
+    color: var(--green);
+    outline: 2px solid var(--green);
+}
 
 #klimaSection{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     background-color: var(--white);
 }
 
@@ -277,12 +331,17 @@ main{
     margin-bottom: 40px;
 }
 
+#links a:hover{
+    opacity: 0.6;
+}
+
 footer{
     background-color: var(--green);
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     color: var(--white);
     font-size: 0.85rem;
     box-shadow: 0 0 20px -10px black;
@@ -290,7 +349,11 @@ footer{
 
 
 #kontakt, #adresse{
-    margin: 40px var(--margin);
+    margin: 40px auto 40px var(--margin);
+}
+
+#kontakt{
+    max-width: 30ch;
 }
 
 
@@ -317,13 +380,383 @@ footer{
     margin: 15px 0;
     text-decoration: underline;
 }
-
-
+#linkContainer a:not(:last-child):hover, #linkContainer p:hover{
+    opacity: 0.8;
+}
 #smiley{
     display: block;
     margin: 20px 0 20px 0;
 }
-
 #smiley img{
     width: 150px;
+}
+
+@media screen and (min-width: 500px) {
+    body{
+        --margin: 40px;
+    }
+    
+    #heroSection, #klimaSection{
+        max-width: 700px;
+    }
+    #hero{
+        display: none;
+    }
+    #heroDesktop{
+        display: block;
+        width: 100%;
+        padding: 60px var(--margin);
+    }
+    #heroText{
+        max-width: 700px;
+    }
+    .compContainer p{
+        font-size: 1.1rem;
+    }
+    
+}
+
+@media screen and (min-width: 630px) {
+    footer{
+        align-items: center;
+    }
+    #footerContainer{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    #kontakt, #adresse{
+        margin: var(--margin);
+    }
+    #kontakt{
+        max-width: 30ch;
+    }
+    #adresse{
+        text-align: right;
+    }
+    #linkContainer{
+        width: 100%;
+        max-width: 900px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 var(--margin);;
+        margin-top: 10px;
+    }
+    #linkContainer a, #linkContainer p{
+        color: var(--white);
+        margin: 15px 0px;
+        text-decoration: underline;
+    }
+    #smiley{
+        display: block;
+        margin: 20px 0 20px 0;
+    }
+    #smiley img{
+        width: 150px;
+    }
+    #menu{
+        height: 400px;
+    }
+    
+}
+
+@media screen and (min-width: 700px) {
+    #kitchenAid{
+        max-width: 400px;
+    }
+    #compSection h2, #compSection h3{
+        padding: 60px 0;
+    }
+    #compSection h2{
+        font-size: 2.3rem;
+    }
+    #compSection h3{
+        font-size: 1.9rem;
+    }
+    .compContainer{
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 700px;
+        padding: 0 var(--margin);
+    }
+    .compContainer img{
+        width: 250px;
+        padding: 0;
+    }
+    #compSection hr{
+        width: 100%;
+        max-width: 620px;
+        margin: 50px auto;
+    }
+    #compSection h4{
+        display: block;
+        font-size: 6.5rem;
+    }
+    .compContainer p{
+        margin: 20px 20px 0 20px;
+        max-width: 20ch;
+        font-size: 1.1rem;
+    }
+    #deltag{
+        width: fit-content;
+        text-align: center;
+        text-decoration: none;
+        color: var(--white);
+        background-color: var(--green);
+        padding: 10px 20px;
+        border-radius: 2000px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 30px 0 0px 0;
+    }
+}
+
+@media screen and (min-width: 1075px){
+    header{
+        display: none;
+    }
+    body{
+        display: flex;
+        max-width: 100vw;
+        --margin: 50px;
+    }
+    html{
+        scroll-padding-top: 0px;
+    }
+    main{
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #wrap{
+        width: 100%;
+    }
+    #desktopMenu{
+        display: flex;
+        flex-direction: column;
+        min-width: 330px;
+        background-color: var(--green);
+        height: 100vh;
+        z-index: 99999;
+        position: sticky;
+        top: 0;
+        box-shadow: 0 0 20px -9px black;
+    }
+    .menupunkt{
+        font-size: 1.35rem;
+        justify-content: left;
+        padding-left: var(--margin);
+    }
+    .menupunkt:hover{
+        box-shadow: 0 0 20px -15px black;
+    }
+    #tilForside{
+        color: var(--white);
+        text-decoration: none;
+        font-size: 1rem;
+        margin: 40px 0;
+        margin-right: auto;
+    }
+    #tilForside img{
+        margin: 0 10px 0 var(--margin);
+        height: 1.1rem;
+    }
+    #desktopLogo{
+        display: block;
+        margin: 0 50px 50px 50px;
+    }
+    #heroSection, #klimaSection{
+        max-width: 900px;
+        margin: 0;
+        padding: 0 var(--margin);
+    }
+    #compSection{
+        width: 100%;
+        margin: 0 0px;
+    }
+    .divider{
+        width: 100%;
+        margin: 0 auto;
+    }
+    footer{
+        width: 100%;
+    }
+    #hero{
+        display: none;
+    }
+    #heroDesktop{
+        display: block;
+        width: 100%;
+        max-width: 900px;
+        padding: 100px 0 60px 0;
+    }
+    #heroText{
+        font-size: 1.3rem;
+        margin: 0;
+        max-width: none;
+    }
+    #heroSection h1{
+        font-size: 1.5rem;
+        margin: 0 auto 1rem 0;
+    }
+    #scrollDown{
+        width: 40px;
+    }
+    #menuContainer{
+        display: flex;
+        flex-direction: column;
+        height: 550px;
+    }
+    .kornMobil{
+        margin: 60px 0;
+    }
+    #kitchenAid{
+        max-width: 500px;
+    }
+    #compSection h2, #compSection h3{
+        font-weight: bold;
+        text-align: center;
+        padding: 60px 0;
+    }
+    #compSection h2{
+        font-size: 2.5rem;
+    }
+    #compSection h3{
+        font-size: 1.9rem;
+    }
+    .compContainer{
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 900px;
+        padding: 0 50px;
+    }
+    .compContainer img{
+        width: 300px;
+        padding: 0;
+    }
+    #compSection hr{
+        width: 100%;
+        max-width: 800px;
+        margin: 50px auto;
+    }
+    #compSection h4{
+        display: block;
+        font-size: 7rem;
+    }
+    .compContainer p{
+        margin: 20px 20px 0 20px;
+        max-width: 20ch;
+        font-size: 1.3rem;
+    }
+    #deltag{
+        width: fit-content;
+        text-align: center;
+        text-decoration: none;
+        color: var(--white);
+        background-color: var(--green);
+        padding: 10px 20px;
+        border-radius: 2000px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 30px 0 0px 0;
+    }
+    #klimaSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: var(--white);
+    }
+    #klimaHero{
+        width: 100%;
+        padding: 0;
+    }
+    #klimaSection h2{
+        padding: 50px 0 50px 0;
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+    #klimaSection h3{
+        padding: 60px 0 20px 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0 auto 0 0;
+    }
+    #klimaSection p{
+        text-align: left;
+        margin: 0;
+        font-size: 1.3rem;
+    }
+    #links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+    
+    }
+    
+    #links a{
+        color: black;
+        margin-bottom: 60px;
+        font-size: 1.3rem;
+    }
+    
+    footer{
+        font-size: 1rem;
+    }
+    #footerContainer{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 900px;
+    }
+    
+    
+    #kontakt, #adresse{
+        margin: var(--margin);
+    }
+    #kontakt{
+        max-width: 30ch;
+    }
+    #adresse{
+        text-align: right;
+    }
+    
+    
+    #kontakt :first-child{
+        margin-bottom: 40px;
+    }
+    
+    #kontakt :last-child{
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    
+    #linkContainer{
+        width: 100%;
+        max-width: 900px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 var(--margin);;
+        margin-top: 10px;
+    }
+    
+    #linkContainer a, #linkContainer p{
+        color: var(--white);
+        margin: 15px 0px;
+        text-decoration: underline;
+    }
+    #smiley{
+        display: block;
+        margin: 20px 0 20px 0;
+    }
+    #smiley img{
+        width: 150px;
+    }
 }

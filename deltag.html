@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Andreas Deleuran Holm Nielsen"/>
+    <meta name="description" content="Ny Amo Økologisk Hvedemel"/>
+    <meta name="keywords" content="Amo, økologisk, øko, hvedemel, mel, bagning, madlavning"/>
+    <title>Amo Øko - Deltag</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/deltag.css">
+    <link rel="stylesheet" href="https://use.typekit.net/sue3pbl.css">
+    <link rel="shortcut icon" href="images/Logo.svg" type="image/x-icon"> 
+</head>
+<body>
+    <header>
+        <a id="mobilLogo" href="index.html"><img src="images/Logo.svg" alt="Amo Øko Logo"></a>
+    </header>
+        <main>
+            <section id="deltagSection">
+                <h1>Vind en KitchenAid</h1>
+                <img src="images/kitchenaid.webp" alt="kitchenaid">
+                <div id="deltagContainer">
+                    <h2>Tast din kode:</h2>
+                    <input type="text" name="code" id="codeInput">
+                    <a id="deltag" href="#" onclick="hide(deltag)">Deltag</a>
+                </div>
+            </section>
+            <div id="tak">
+                <h1>Desværre</h1>
+                <h2>Ingen gevinst denne gang...</h2>
+                <h2>Prøv igen med en anden kode!</h2>
+                <a id="retry" href="#" onclick="hide(tak)">Prøv igen</a>
+            </div>
+        </main>
+        <footer>
+            <div id="footerContainer">
+                <div id="kontakt">
+                        <p>Forbrugertelefon 80 25 34 06</p>
+                        <p>
+                            Har du spørgsmål eller kommentarer til Amo, beder vi dig kontakte 
+                            Lantmännen Cerealia på e-mail:
+                        </p>
+    
+                        <p>forbrugerkontakt.amo@lantmannen.com</p>
+                </div>
+                <div id="adresse">
+                    <p>
+                        Lantmännen Cerealia A/S <br>
+                        Møllegade 12, DK-7100 Vejle <br> 
+                        Tlf. 79 41 54 15  
+                    </p>
+                </div>
+            </div>
+            <div id="linkContainer">
+                <a href="https://www.amo.dk/lantmannens-databeskyttelsespolitik/">Databeskyttelsespolitik</a>
+                <a href="https://www.amo.dk/cookie-policy/">Anvendelse af cookies</a>
+                <p>Manage Cookies</p>
+                <a id="smiley" href="https://www.findsmiley.dk/73158"><img src="images/elitebanner.webp" alt="elite smiley banner"></a>
+            </div>
+        </footer>
+        <script>
+            const deltag = document.getElementById("deltagSection");
+            const tak = document.getElementById("tak");
+
+            function hide(item){
+                tak.style.display = "flex";
+                deltag.style.display = "flex";
+                item.style.display = "none";
+            }
+        </script>
+</body>
+</html>
