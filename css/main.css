@@ -364,6 +364,21 @@ main{
 #links a:hover{
     opacity: 0.6;
 }
+/* Styling af social media ikoner og deres flex container */
+#socials{
+    display: flex;
+    align-items: center;
+    height: fit-content;
+}
+.social{
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin: 0px 10px !important;
+}
+.social img{
+    width: 40px;
+}
 
 /* Styling af footer */
 
@@ -736,6 +751,12 @@ dette opnås ved at referere til forst og last child  */
         color: black;
         margin-bottom: 60px;
         font-size: 1.3rem;
+    }
+    .social{
+        margin: 0px 20px !important;
+    }
+    .social img{
+        width: 50px;
     }
     
     footer{

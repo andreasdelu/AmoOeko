@@ -16,6 +16,8 @@
     box-sizing: border-box;
 }
 
+/* Små ændringer i stylings så de passe til deltag siden */
+
 body, html{
     width: 100vw;
     height: auto;
@@ -49,12 +51,14 @@ main{
     width: 100vw;
 }
 
+/* Styling af de to sections og deres text styles */
+
 #deltagSection, #tak{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     width: 100vw;
     max-width: 650px;
     height: 100%;
@@ -63,6 +67,7 @@ main{
     padding: var(--margin) 0;
     border-right: 2px dashed rgba(65, 168, 61, 0.3);
     border-left: 2px dashed rgba(65, 168, 61, 0.3);
+    border-bottom: 2px dashed rgba(65, 168, 61, 0.3);
 }
 #deltagSection h1{
     font-family: var(--apertura);
@@ -77,12 +82,15 @@ main{
     position: relative;
     
 }
-#deltagSection h2{
+#deltagSection label{
     font-family: var(--apertura);
     color: var(--white);
     font-size: 1.8rem;
     font-weight: bold;
 }
+
+/* Styling af textinput feltet */
+
 #codeInput{
     border-radius: 2000px;
     border: none;
@@ -94,10 +102,14 @@ main{
     font-family: var(--apertura);
 }
 
+/* Styling af deltag knap (genbrugt fra main.css) */
+
 #deltag{
     outline: 2px solid var(--white);
     font-size: 1.2rem;
 }
+
+/* Styling af den grønne boks der indeholder tekstinput */
 
 #deltagContainer{
     background-color: var(--green);
@@ -126,6 +138,8 @@ main{
     font-size: 2.5rem;
 }
 
+/* Prøv igen knap styling */
+
 #retry{
     text-decoration: none;
     font-weight: bold;
@@ -144,6 +158,8 @@ main{
 
 
 @media screen and (min-width: 500px) {
+
+    /* Tekst, margin og section ændres så det fylder mere */
     body{
         --margin: 40px;
     }
@@ -164,6 +180,9 @@ main{
 }
 
 @media screen and (min-width: 630px) {
+
+    /* større tekst samt fjerner margin på deltag knap fra main.css */
+
     #deltag{
         margin: 0;
     }
@@ -176,6 +195,7 @@ main{
 
 }
 @media screen and (min-width: 1075px){
+    /* Små ændringer i footerens style ift. main.css */
     body{
         display: block;
         --margin: 50px;
@@ -189,48 +209,8 @@ main{
         width: 100%;
         max-width: none;
     }
-    
-    
     #kontakt, #adresse{
         margin: var(--margin);
-    }
-    #kontakt{
-        max-width: 30ch;
-    }
-    #adresse{
-        text-align: right;
-    }
-    
-    
-    #kontakt :first-child{
-        margin-bottom: 40px;
-    }
-    
-    #kontakt :last-child{
-        margin-top: 20px;
-        margin-bottom: 0px;
-    }
-    
-    #linkContainer{
-        width: 100%;
-        max-width: 900px;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 var(--margin);;
-        margin-top: 10px;
-    }
-    
-    #linkContainer a, #linkContainer p{
-        color: var(--white);
-        margin: 15px 0px;
-        text-decoration: underline;
-    }
-    #smiley{
-        display: block;
-        margin: 20px 0 20px 0;
-    }
-    #smiley img{
-        width: 150px;
     }
 }
     

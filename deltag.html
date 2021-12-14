@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Andreas Deleuran Holm Nielsen"/>
     <meta name="description" content="Deltag i Amo Øko konkurrencen om en KitchenAid"/>
-    <meta name="keywords" content="Amo, økologisk, øko, hvedemel, mel, bagning, madlavning"/>
+    <meta name="keywords" content="Amo, økologisk, øko, hvedemel, mel, bagning, madlavning, KitchenAid"/>
     <title>Amo Øko - Deltag</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
@@ -26,11 +26,11 @@
                 <img src="images/kitchenaid.webp" alt="kitchenaid">
                 <!-- Flex container til kodefelt -->
                 <div id="deltagContainer">
-                    <h2>Tast din kode:</h2>
                     <!-- Input til kode -->
+                    <label for="codeInput">Tast din kode:</label>
                     <input type="text" name="code" id="codeInput">
                     <!-- Deltag knap der sender brugeren videre og checker om de har vundet -->
-                    <a id="deltag" href="#" onclick="hide(deltag)">Deltag</a>
+                    <a id="deltag" href="javascript:hide(deltag)" >Deltag</a>
                 </div>
             </section>
             <!-- Section der indeholder info om hvorvidt brugeren har vundet, bliver vist ved hjælp af javascript -->
@@ -38,11 +38,23 @@
                 <h1>Desværre</h1>
                 <h2>Ingen gevinst denne gang...</h2>
                 <h2>Prøv igen med en anden kode!</h2>
-                <a id="retry" href="#" onclick="hide(tak)">Prøv igen</a>
+                <a id="retry" href="javascript:hide(tak)">Prøv igen</a>
+            </section>
+            <!-- Section der indeholder links til Amos undersider -->
+            <section id="links">
+                <a href="https://www.amo.dk/om-amo/">Om Amo</a>
+                <a href="https://www.amo.dk/produkter/">Vores andre produkter</a>
+                <!-- Flex container med social media ikoner -->
+                <div id="socials">
+                    <a class="social" href="https://www.facebook.com/amodanmark"><img src="images/fb.png" alt="facebook logo"></a>
+                    <a class="social" href="https://www.youtube.com/channel/UCEUGJSdy4DRrLeApDk18wtw"><img src="images/yt.png" alt="youtube logo"></a>
+                </div>
             </section>
         </main>
         <footer>
+            <!-- Flex container der sørger for at kontakt og adresse kan lægge ovenpå hinanden eller ved siden af hinanden alt efter skærmens bredde -->
             <div id="footerContainer">
+                <!-- Div med Amos kontaktoplysninger -->
                 <div id="kontakt">
                         <p>Forbrugertelefon 80 25 34 06</p>
                         <p>
@@ -52,6 +64,7 @@
     
                         <p>forbrugerkontakt.amo@lantmannen.com</p>
                 </div>
+                <!-- Div med Amos adresse -->
                 <div id="adresse">
                     <p>
                         Lantmännen Cerealia A/S <br>
@@ -60,10 +73,13 @@
                     </p>
                 </div>
             </div>
+            <!-- Flex container der sørger for at linksne kan lægge ovenpå hinanden eller ved siden af hinanden alt efter skærmens bredde -->
             <div id="linkContainer">
                 <a href="https://www.amo.dk/lantmannens-databeskyttelsespolitik/">Databeskyttelsespolitik</a>
                 <a href="https://www.amo.dk/cookie-policy/">Anvendelse af cookies</a>
+                <!-- Skulle være et link men på den originale side fører dette link til en JavaScript modal som jeg ikke kan genskabe -->
                 <p>Manage Cookies</p>
+                <!-- Elitesmiley link -->
                 <a id="smiley" href="https://www.findsmiley.dk/73158"><img src="images/elitebanner.webp" alt="elite smiley banner"></a>
             </div>
         </footer>
