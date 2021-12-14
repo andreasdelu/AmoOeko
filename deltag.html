@@ -16,24 +16,30 @@
 </head>
 <body>
     <header>
+        <!-- Logo der linker tilbage til kampagnesiden -->
         <a id="mobilLogo" href="index.html"><img src="images/Logo.svg" alt="Amo Øko Logo"></a>
     </header>
         <main>
+            <!-- Section der indeholder billede og container til indtastning af konkurrencekode -->
             <section id="deltagSection">
                 <h1>Vind en KitchenAid</h1>
                 <img src="images/kitchenaid.webp" alt="kitchenaid">
+                <!-- Flex container til kodefelt -->
                 <div id="deltagContainer">
                     <h2>Tast din kode:</h2>
+                    <!-- Input til kode -->
                     <input type="text" name="code" id="codeInput">
+                    <!-- Deltag knap der sender brugeren videre og checker om de har vundet -->
                     <a id="deltag" href="#" onclick="hide(deltag)">Deltag</a>
                 </div>
             </section>
-            <div id="tak">
+            <!-- Section der indeholder info om hvorvidt brugeren har vundet, bliver vist ved hjælp af javascript -->
+            <section id="tak">
                 <h1>Desværre</h1>
                 <h2>Ingen gevinst denne gang...</h2>
                 <h2>Prøv igen med en anden kode!</h2>
                 <a id="retry" href="#" onclick="hide(tak)">Prøv igen</a>
-            </div>
+            </section>
         </main>
         <footer>
             <div id="footerContainer">
@@ -61,6 +67,7 @@
                 <a id="smiley" href="https://www.findsmiley.dk/73158"><img src="images/elitebanner.webp" alt="elite smiley banner"></a>
             </div>
         </footer>
+        <!-- JavaScript til visning af sektionerne -->
         <script>
             const deltag = document.getElementById("deltagSection");
             const tak = document.getElementById("tak");
